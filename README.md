@@ -19,7 +19,7 @@
 
 ## Notes
 
-### Multiple `expect` useful and clearer for hash comparison
+### Multiple `expect` useful and clearer for hash and array verifications
 
 ```ruby
 expect(foo[:a]).to eq 123
