@@ -16,3 +16,13 @@
   - `let` enforced instead of `before` blocks
   - Only 1 `expect` per test
 5. Where the setup phase should happen in a spec?)
+
+## Notes
+
+### Multiple `expect` useful and clearer for hash comparison
+
+```ruby
+expect(foo[:a]).to eq 123
+expect(foo[:b]).to eq 456
+expect(foo[:c]).to eq 789
+```

@@ -3,6 +3,7 @@
 require 'spec_helper'
 require 'bank_account'
 
+# #1
 RSpec.describe BankAccount do
   subject(:account) { described_class.new(prior_balance) }
 
@@ -26,23 +27,38 @@ RSpec.describe BankAccount do
     end
   end
 
-  describe 'Withdraw' do
-    let(:prior_balance) { 100 }
-    let(:amount) { 100 }
+  # describe 'Withdraw' do
+  #   let(:prior_balance) { 100 }
+  #   let(:amount) { 100 }
 
-    it 'decreases balance by withdrawn amount' do
-      account.withdraw(amount)
+  #   it 'decreases balance by withdrawn amount' do
+  #     account.withdraw(amount)
 
-      expect(account.balance).to eq(prior_balance - amount)
-    end
+  #     expect(account.balance).to eq(prior_balance - amount)
+  #   end
 
-    it 'marks bank account as empty' do
-      # Assert for status, maybe raise?
-      expect(account.empty?).to eq false
+  #   it 'changes account empty status' do
+  #     previously_empty = account.empty?
 
-      account.withdraw(amount)
+  #     account.withdraw(amount)
 
-      expect(account.empty?).to eq true
-    end
-  end
+  #     expect(previously_empty).not_to eq account.empty?
+  #   end
+
+  #   it 'marks bank account as empty' do
+  #     account.withdraw(amount)
+
+  #     expect(account.empty?).to eq true
+  #   end
+
+  #   # Alternative
+  #   it 'marks bank account as empty' do
+  #     previously_empty = account.empty?
+
+  #     account.withdraw(amount)
+
+  #     expect(previously_empty).not_to eq account.empty?
+  #     expect(account.empty?).to eq true
+  #   end
+  # end
 end

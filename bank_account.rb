@@ -11,15 +11,20 @@ class BankAccount
   end
 
   def deposit(amount)
-    raise ArgumentError if amount <= 0
+    raise ArgumentError if amount < 0
 
     @balance += amount
   end
 
   def withdraw(amount)
-    raise OverdraftError if balance < amount
+    raise ArgumentError if amount < 0
+    raise OverdraftError unless funds_available?(amount)
 
     @balance -= amount
+  end
+
+  def funds_available?(amount)
+    balance >= amount
   end
 
   def empty?
