@@ -20,10 +20,10 @@ RSpec.describe BankAccount do
   describe 'Withdraw' do
     let(:prior_balance) { 100 }
     let(:amount) { 100 }
-    let(:new_balance) { account.deposit(amount) }
+    let(:new_balance) { account.withdraw(amount) }
 
     it 'decreases balance by withdrawn amount' do
-      expect(new_balance).to eq(amount + prior_balance)
+      expect(new_balance).to eq(amount - prior_balance)
     end
   end
 end
